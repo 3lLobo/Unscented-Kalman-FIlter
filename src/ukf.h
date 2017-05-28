@@ -29,7 +29,13 @@ public:
   ///* state covariance matrix
   MatrixXd P_;
 
-  ///* predicted sigma points matrix
+  ///* lidar noise covariance matrix
+  MatrixXd R_laser_;
+
+  ///* radar noise covariance matrix
+  MatrixXd R_radar_;
+
+    ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
 
   ///* time when the state is true, in us
@@ -73,11 +79,6 @@ public:
 
   ///* the current NIS for laser
   double NIS_laser_;
-  
-  ///* lidar and radar noise
-  MatrixXd R_laser_;
-  
-  MatrixXd R_radar_;
 
   /**
    * Constructor
